@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -44,3 +45,8 @@ if(BUILD_TESTS)
     target_link_libraries(check \${PROJECT_NAME} \${DEPENDS_LIBRARIES})
     add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes") 
 endif()
+=======
+add_executable (tests
+main.cpp bar.cpp
+)
+>>>>>>> refs/remotes/origin/master

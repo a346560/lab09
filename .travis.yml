@@ -1,4 +1,5 @@
 language: cpp
+<<<<<<< HEAD
 
 script:
 - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
@@ -13,3 +14,9 @@ addons:
       - cmake
       - cmake-data
       
+=======
+script: 
+- cmake -H. -B_build
+- cmake --build _build
+- ./_build/tests
+>>>>>>> refs/remotes/origin/master
