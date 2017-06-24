@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5ae922dd597561775d9c7065a3dcd4920acf4251
 cmake_minimum_required(VERSION 3.0)
 
 include(CPackConfig.cmake)
@@ -26,7 +22,6 @@ add_library(print STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
 target_include_directories(print PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
-<<<<<<< HEAD
 )
 
 if(BUILD_EXAMPLES)
@@ -59,13 +54,7 @@ if(BUILD_TESTS)
     target_link_libraries(check \${PROJECT_NAME} \${DEPENDS_LIBRARIES})
     add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes") 
 endif()
-=======
-add_executable (tests
-main.cpp bar.cpp
-)
->>>>>>> refs/remotes/origin/master
-=======
-)
+
 
 if(BUILD_EXAMPLES)
   file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
@@ -97,5 +86,5 @@ if(BUILD_TESTS)
     target_link_libraries(check \${PROJECT_NAME} \${DEPENDS_LIBRARIES})
     add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes") 
 endif()
->>>>>>> 5ae922dd597561775d9c7065a3dcd4920acf4251
+
 
