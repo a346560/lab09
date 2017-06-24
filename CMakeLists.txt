@@ -4,12 +4,22 @@
 >>>>>>> 5ae922dd597561775d9c7065a3dcd4920acf4251
 cmake_minimum_required(VERSION 3.0)
 
+include(CPackConfig.cmake)
+
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(BUILD_EXAMPLES "Build examples" OFF)
 
 project(print)
+
+set(PRINT_VERSION_STRING "v${PRINT_VERSION}")
+set(PRINT_VERSION ${PRINT_VERSION_MAJOR}.\${PRINT_VERSION_MINOR}.\${PRINT_VERSION_PATCH}.\${PRINT_VERSION_TWEAK})
+set(PRINT_VERSION_TWEAK 0)
+set(PRINT_VERSION_PATCH 0)
+set(PRINT_VERSION_MINOR 1)
+set(PRINT_VERSION_MAJOR 0)
+
 
 add_library(print STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
 
@@ -88,3 +98,4 @@ if(BUILD_TESTS)
     add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes") 
 endif()
 >>>>>>> 5ae922dd597561775d9c7065a3dcd4920acf4251
+
